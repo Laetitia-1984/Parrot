@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+body {
+    font-family: 'Cookie', cursive;
+}
+
+header, footer {
+    font-size: 30px;
+}
+
+.title {
+    font-size: 70px;
+    font-style: italic;
+}
+
+.btn {
+    font-size: 30px;
+}
+
+.lead {
+    font-size: 30px;
+}
+
+.horaires {
+    font-size: 25px;
+}
+
+h3 {
+    font-style: italic;
+    font-weight: bold;
+}

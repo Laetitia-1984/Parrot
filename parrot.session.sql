@@ -1,0 +1,11 @@
+CREATE TABLE cars (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    marque VARCHAR(255) NOT NULL,
+    modele VARCHAR(255) NOT NULL,
+    color VARCHAR(255) NOT NULL,
+    year INT(4) NOT NULL,
+    km INT(6) NOT NULL,
+    price INT(5) NOT NULL,
+    description TEXT NOT NULL,
+    image VARCHAR(255) NOT NULL
+)
