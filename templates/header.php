@@ -1,11 +1,12 @@
 <?php
     require_once('library/config.php');
+    require_once('library/pdo.php');
     
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +33,6 @@
             </ul>
 
             <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-primary me-2">Connexion</button>
+                <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'login.php';">Connexion</button>
             </div>
         </header>
