@@ -2,24 +2,72 @@
 
 body {
     font-family: 'Cookie', cursive;
+    font-size: 20px;
 }
 
-header, footer, .btn, .lead {
+header, footer, .btn, .lead, .mark-model-car {
     font-size: 30px;
 }
 
-.title {
+.title, .detail-car {
     font-size: 70px;
 }
 
-h3 {
+h3, h4, .price, .mark-model-car, .detail-car {
     font-weight: bold;
 }
 
-.menu-admin, .formUser, h5, .link_comment, .horaires, .comment, .form_comment {
+.menu-admin, .formUser, .link_comment, .horaires, .comment, .form_comment, .form-text, .text-services, .form_service, .form-occasion, .list-cat, .list-days, .list-hours, .list-note {
     font-size: 25px;
 }
 
-.link_comment, h3, h5, .title {
+.table-service, .table-comment {
+    font-size: 23px;
+}
+
+.form-control {
+    width: 30%;
+}
+
+.form-select {
+    width: 15%;
+}
+
+.text-services, .text-comments {
+    letter-spacing: 2px;
+}
+.link_comment, h3, h5, .title, h4, .price, .title_service {
     font-style: italic;
+}
+
+.title_service {
+    text-decoration: underline; 
+}
+
+.bi::before {
+    display: inline-block;
+    content: "";
+    vertical-align: -.125em;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+}
+
+.menu-admin {
+    color: white;
+}
+
+.list-hours, .list-days {
+    width: 120px;
+}
+
+.list-cat {
+    width: 200px;
+}
+
+.font-color-service {
+    background-color: #a4a0a0;
+}
+
+.mark-model-car, .detail-car {
+    color: purple;
 }

@@ -1,6 +1,7 @@
 <?php
     require_once('library/config.php');
     require_once('library/pdo.php');
+    require_once('library/session.php');
     
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
 ?>
@@ -8,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garage Parrot</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -33,6 +34,10 @@
             </ul>
 
             <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'login.php';">Connexion</button>
+                <?php if(isset($_SESSION['user'])) { ?>
+                    <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'logout.php';">Déconnexion</button>
+                <?php } else { ?>
+                    <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'login.php';">Connexion</button>
+                <?php } ?>
             </div>
         </header>

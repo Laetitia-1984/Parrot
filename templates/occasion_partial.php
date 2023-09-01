@@ -1,11 +1,15 @@
-<div class="col-md-4">
+<?php 
+    $imagePath = getOccasionImage($occasion['image']);
+?>
+
+<div class="col-md-3 my-1">
     <div class="card">
-        <img src=<?=getOccasionImage($occasion['image']);?> class="card-img-top">
-        <div class="card-body">
-            <h5 class="card-title"><?=$occasion['mark'].' '.$occasion['model'].' '.$occasion['year'];?></h5>
-            <p class="card-text">Kilométrages: <?=$occasion['km'];?> kms</p>
-            <p class="card-text">Prix: <?=$occasion['price'];?> euros</p>
-            <a href="recette.php?id=<?=$occasion['id'];?>" class="btn btn-primary">Voir l'annonce</a>
+        <img src="<?=$imagePath?>" class="card-img-top" alt="<?=htmlEntities($occasion['model'])?>">
+        <div class="card-body text-center">
+            <h5 class="card-title mark-model-car"><?=htmlEntities($occasion['mark'].' '.htmlEntities($occasion['model']))?></h5>
+            <p class="card-text">Kilométrages: <?=htmlEntities($occasion['km'])?> kms</p>
+            <p class="card-text">Prix: <?=htmlEntities($occasion['price'])?> euros</p>
+            <a href="occasion.php?id=<?=$occasion['id'];?>" class="btn btn-outline-primary me-2">Voir l'annonce</a>
         </div>
     </div>
 </div>

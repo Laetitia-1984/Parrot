@@ -18,7 +18,7 @@ CREATE TABLE `users`
     firstname VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role VARCHAR(255) NOT NULL
+    role VARCHAR(255)
 );
 
 CREATE TABLE `comment`
@@ -42,7 +42,18 @@ CREATE TABLE `services`
 
 INSERT INTO users VALUES 
 (
-    '1', 'parrot', 'vincent', 'v.parrot@gmail.com', 'V.Parrot-1956', 'ADMIN'
+    '1', 'parrot', 'vincent', 'v.parrot@gmail.com', 'V.Parrot-1956', 'admin'
 )
 
+CREATE TABLE `horaires`
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    days VARCHAR(255) NOT NULL,
+    hours VARCHAR(255) NOT NULL
+);
 
+
+ALTER TABLE cars
+ADD image2 VARCHAR(255),
+ADD image3 VARCHAR(255),
+ADD image4 VARCHAR(255)

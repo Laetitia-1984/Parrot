@@ -3,7 +3,7 @@
     require_once('library/config.php');
     require_once('library/comment.php');
 
-    //Tableau des messages d'erreur ou de reussite d'ajout de recette
+    //Tableau des messages d'erreur ou de reussite d'ajout de commentaire
     $errors = [];
     $messages = [];
     $comment = [
@@ -17,9 +17,9 @@
             $res = saveComment($pdo, $_POST['nameClient'], $_POST['note'], $_POST['content']);
         
             if ($res) {
-                $messages[] = 'La recette a bien été sauvegardée';
+                $messages[] = 'Le commentaire a bien été sauvegardé';
             } else {
-                $errors[] = 'La recette n\'a pas été sauvegardée';
+                $errors[] = 'Le commentaire n\'a pas été sauvegardé';
             }
         }
         $comment = [
@@ -30,19 +30,24 @@
     }
 ?>
 
-<!--Formulaire ajout de recette -->
+<!--Formulaire ajout de commentaire -->
 <form method="POST" enctype="multipart/form-data" class="form_comment">
     <div class="mb-3">
         <label for="nameClient">Pseudo</label>
-        <input type="text" name="nameClient" id="nameClient" class="form-control" value="<?=$comment['nameClient']?>">
+        <input type="text" name="nameClient" id="nameClient" class="form-control form-text" maxlength="10" value="<?=$comment['nameClient']?>">
     </div>
     <div class="mb-3">
         <label for="note">Note</label>
-        <input type="text" name="note" id="note" class="form-control"><?=$comment['note'];?></textarea>
+        <select name="note" id="note" class="form-select list-note">
+            <?php foreach ($notes as $note) { ?>
+                <option value="<?=$note; ?>"><?=$note; ?> étoiles</option>
+            <?php } ?>
+        </select>
     </div>
     <div class="mb-3">
         <label for="content">Commentaire</label>
-        <textarea name="content" id="content" cols="30" rows="5" class="form-control"><?=$comment['content'];?></textarea>
+        <textarea name="content" id="content" cols="30" rows="3" class="form-control form-text"><?=$comment['content'];?></textarea>
     </div>
-    <input type="submit" value="Envoyer" name="saveComment" class="btn btn-outline-primary me-2">
+    <input type="submit" value="Envoyer" name="saveComment" onclick="window.location.href = 'index.php';" class="btn btn-outline-primary me-2">
+    <a href="index.php">Retour à l'accueil</a>
 </form>

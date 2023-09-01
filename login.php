@@ -1,6 +1,5 @@
 <?php 
-    require_once ('library/config.php');
-    require_once('library/session.php');
+    require_once('library/config.php');
     require_once('library/user.php');
     require_once('templates/header.php');
     
@@ -16,7 +15,9 @@
             session_regenerate_id(true);
             $_SESSION['user'] = $user; //Session qui permet de garder en mémoire qui est connecté
             if ($user['role'] === 'user') {
-                header('location: index.php'); // Redirection si l'user est un salarié
+                header('location: user/index.php'); // Redirection si l'user est un salarié
+            } elseif ($user['role'] === 'null') {
+                header('location: user/index.php');
             } elseif ($user['role'] === 'admin') {
                 header('location: admin/index.php'); // Redirection si l'user est un admin
             }
@@ -37,11 +38,11 @@
 <form method="post" class="formUser">
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" name="email" id="email" class="form-control">
+        <input type="email" name="email" id="email" class="form-control form-text">
     </div>
     <div class="mb-3">
         <label for="password" class="form-label">Mot de passe</label>
-        <input type="password" name="password" id="password" class="form-control">
+        <input type="password" name="password" id="password" class="form-control form-text">
     </div>
     <input type="submit" value="Connexion" name="loginUser" class="btn btn-outline-primary me-2">
 </form>
