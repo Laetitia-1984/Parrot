@@ -5,7 +5,7 @@ body {
     font-size: 20px;
 }
 
-header, footer, .btn, .lead, .mark-model-car {
+header, footer, .btn, .lead, .mark-model-car, legend, .p-occas-detail {
     font-size: 30px;
 }
 
@@ -17,7 +17,7 @@ h3, h4, .price, .mark-model-car, .detail-car {
     font-weight: bold;
 }
 
-.menu-admin, .formUser, .link_comment, .horaires, .comment, .form_comment, .form-text, .text-services, .form_service, .form-occasion, .list-cat, .list-days, .list-hours, .list-note {
+.menu-admin, .formUser, .link_comment, .horaires, .comment, .form_comment, .form-text, .text-services, .form_service, .form-occasion, .list-cat, .list-cars, .list-days, .list-hours, .list-note, .form-contact {
     font-size: 25px;
 }
 
@@ -27,6 +27,10 @@ h3, h4, .price, .mark-model-car, .detail-car {
 
 .form-control {
     width: 30%;
+}
+
+.form-select-contact {
+    width: 90%;
 }
 
 .form-select {
@@ -70,4 +74,15 @@ h3, h4, .price, .mark-model-car, .detail-car {
 
 .mark-model-car, .detail-car {
     color: purple;
+}
+
+.p-form-filtre {
+    font-size: 50px;
+}
+
+.search-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }

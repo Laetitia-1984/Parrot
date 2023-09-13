@@ -17,6 +17,11 @@
             <h1 class="display-5 fw-bold lh-1 mb-3 detail-car"><?=$occasion['mark'] .' '. $occasion['model'] . ' ' . $occasion['year'];?></h1>
         </div>
     </div>
+    <div class="p-occas-detail text-center">
+        <p>Si vous souhaitez avoir plus d'informations sur cette annonce, n'hésitez pas et cliquez sur le lien ci-dessous</p>
+        <a href="formulaire_contact.php">Contactez nous</a>
+    </div>
+    
     <div class="row flex-row align-items-center g-5 py-5">
         <div class="col-3 col-sm-8 col-lg-6">
             <img src="<?=getOccasionImage($occasion['image']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">

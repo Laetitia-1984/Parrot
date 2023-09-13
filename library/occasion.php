@@ -54,7 +54,7 @@ function saveOccasion(PDO $pdo, string $mark, string $model, int $year, int $km,
     if ($id === null) {
         $query = $pdo->prepare("INSERT INTO cars (mark, model, year, km, price, description, image, image2, image3, image4) "."VALUES(:mark, :model, :year, :km, :price, :description, :image, :image2, :image3, :image4)");
     } else {
-        $query =$pdo->prepare("UPDATE `cars` SET `mark` = :mark," . "`model` = :model," . "`year` = :year," . "`km` = :km," . "`price` = :price," . "`description` = :description," . "`image` = :image," . "`image2` = :image2," . "`image3` = :image3," . "`image4` = :image4 WHERE `id` = :id;");
+        $query = $pdo->prepare("UPDATE `cars` SET `mark` = :mark," . "`model` = :model," . "`year` = :year," . "`km` = :km," . "`price` = :price," . "`description` = :description," . "`image` = :image," . "`image2` = :image2," . "`image3` = :image3," . "`image4` = :image4 WHERE `id` = :id;");
         
         $query->bindValue(':id', $id, $pdo::PARAM_INT);
     }
@@ -83,4 +83,8 @@ function deleteOccasion(PDO $pdo, int $id):bool {
         return false;
     }
 }
+
+
+
+
 

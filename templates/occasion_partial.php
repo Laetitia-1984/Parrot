@@ -9,6 +9,7 @@
             <h5 class="card-title mark-model-car"><?=htmlEntities($occasion['mark'].' '.htmlEntities($occasion['model']))?></h5>
             <p class="card-text">Kilométrages: <?=htmlEntities($occasion['km'])?> kms</p>
             <p class="card-text">Prix: <?=htmlEntities($occasion['price'])?> euros</p>
+            <p class="card-text">Année: <?=htmlEntities($occasion['year'])?></p>
             <a href="occasion.php?id=<?=$occasion['id'];?>" class="btn btn-outline-primary me-2">Voir l'annonce</a>
         </div>
     </div>
