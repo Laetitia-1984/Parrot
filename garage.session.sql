@@ -1,5 +1,4 @@
-CREATE TABLE `cars`
-(
+CREATE TABLE `cars` (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     mark VARCHAR(255) NOT NULL,
     model VARCHAR(255) NOT NULL,
@@ -10,9 +9,7 @@ CREATE TABLE `cars`
     image VARCHAR(255) NOT NULL,
     id_users INT REFERENCES users(id)
 );
-
-CREATE TABLE `users` 
-(
+CREATE TABLE `users` (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     firstname VARCHAR(255) NOT NULL,
@@ -20,18 +17,14 @@ CREATE TABLE `users`
     password VARCHAR(255) NOT NULL,
     role VARCHAR(255)
 );
-
-CREATE TABLE `comment`
-(
+CREATE TABLE `comment` (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nameClient VARCHAR(255) NOT NULL,
     note INT(1),
     content TEXT NOT NULL,
     id_users INT REFERENCES users(id)
 );
-
-CREATE TABLE `services` 
-(
+CREATE TABLE `services` (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     category VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
@@ -39,21 +32,17 @@ CREATE TABLE `services`
     price INT NOT NULL,
     id_users INT REFERENCES users(id)
 );
-
-INSERT INTO users VALUES 
-(
-    '1', 'parrot', 'vincent', 'v.parrot@gmail.com', 'V.Parrot-1956', 'admin'
-)
-
-CREATE TABLE `horaires`
-(
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    days VARCHAR(255) NOT NULL,
-    hours VARCHAR(255) NOT NULL
+INSERT INTO users
+VALUES (
+        '1',
+        'parrot',
+        'vincent',
+        'v.parrot@gmail.com',
+        'V.Parrot-1956',
+        'admin'
 );
-
 
 ALTER TABLE cars
 ADD image2 VARCHAR(255),
-ADD image3 VARCHAR(255),
-ADD image4 VARCHAR(255)
+    ADD image3 VARCHAR(255),
+    ADD image4 VARCHAR(255)

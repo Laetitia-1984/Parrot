@@ -15,7 +15,7 @@
     }
     if ($occasion) {
         if(deleteOccasion($pdo, (int)$_GET["id"])) {
-            $messages[] = "L'annonce' a bien été supprimée";
+            $messages[] = "L'annonce a bien été supprimée";
         } else {
             $errors[] = "Une erreur s'est produite lors de la suppression";
         }

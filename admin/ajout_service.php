@@ -92,7 +92,7 @@
     </div>
     <div class="mb-3">
         <label for="description">Description</label>
-        <textarea name="description" id="description" cols="30" rows="5" class="form-control form-text" value="<?= $service['description']; ?>"></textarea>
+        <textarea name="description" id="description" cols="30" rows="5" class="form-control form-text" value="<?= $service['description']; ?>"><?= $service['description']; ?></textarea>
     </div>
     <div class="mb-3">
         <label for="price">Prix</label>

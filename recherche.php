@@ -24,7 +24,7 @@ if (!empty($kms_range)) {
             $sql .= " OR km BETWEEN 50000 AND 100000";
             break;
         case '100000-plus' :
-            $sql .= " OR km > 100000";
+            $sql .= " OR km >= 100000";
             break;
     }
 }
