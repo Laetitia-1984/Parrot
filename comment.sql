@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3307
--- Généré le : ven. 29 sep. 2023 à 19:16
--- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.2.4
+-- Hôte : localhost:3306
+-- Généré le : sam. 30 sep. 2023 à 20:41
+-- Version du serveur : 10.5.20-MariaDB
+-- Version de PHP : 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `garage`
+-- Base de données : `id21330133_garage`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,9 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `nameClient`, `note`, `content`, `id_users`) VALUES
-(1, 'Titi', 4, 'Super garage', NULL);
+(1, 'Titi', 4, 'Super garage', NULL),
+(2, 'Caly', 3, 'Service un peu long', NULL),
+(3, 'Jacques', 4, 'Beau garage !!', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -60,7 +62,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT pour la table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
