@@ -2,7 +2,6 @@
     require_once('library/config.php');
     require_once('library/pdo.php');
     require_once('library/session.php');
-    
     $currentPage = basename($_SERVER['SCRIPT_NAME']);
 ?>
 
@@ -32,12 +31,8 @@
                         <li class="nav-item"><a href="<?=$key; ?>" class="nav-link <?php if ($currentPage === $key) { echo 'active';} ?>"><?=$value;?></a></li>
                 <?php } ?>
             </ul>
-
             <div class="col-md-3 text-end">
-                <?php if(isset($_SESSION['user'])) { ?>
-                    <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'logout.php';">Déconnexion</button>
-                <?php } else { ?>
-                    <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'login.php';">Connexion</button>
-                <?php } ?>
+                <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'login.php';">Connexion</button>
             </div>
+
         </header>

@@ -2,14 +2,11 @@
     require_once('library/config.php');
     require_once('library/user.php');
     require_once('templates/header.php');
-    
     $errors = [];
-
     //Vérification que le formulaire a bien été envoyé
     if (isset($_POST["loginUser"])) {
         $email = $_POST["email"];
         $password = $_POST["password"];
-
         $user = verifyUserLoginPassword($pdo, $email, $password);
         if ($user) {
             session_regenerate_id(true);
