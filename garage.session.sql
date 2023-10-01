@@ -38,7 +38,7 @@ VALUES (
         'parrot',
         'vincent',
         'v.parrot@gmail.com',
-        'V.Parrot-1956',
+        'V.Parrot-1953',
         'admin'
 );
 
