@@ -15,6 +15,7 @@
         'firstname' => '',
         'email' => '',
         'password' => '',
+        'role' => '',
     ];
 
     if (isset($_GET['id'])) {
@@ -33,6 +34,7 @@
             'firstname' => $_POST['firstname'],
             'email' => $_POST['email'],
             'password' => $_POST['password'],
+            'role' => $_POST['role'],
         ];
         // S'il n' y a pas d'erreur, on sauvegarde
         if (!$errors) {
@@ -42,7 +44,7 @@
                 $id = null;
             }
             //On passe toutes les données à la fonction getService
-            $res = saveProfil($pdo, $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['password'], $id);
+            $res = saveProfil($pdo, $_POST['name'], $_POST['firstname'], $_POST['email'], $_POST['password'], $_POST['role']);
         
             if ($res) {
                 $messages[] = 'Le profil a bien été sauvegardé';
@@ -52,7 +54,8 @@
                         'name' => '',
                         'firstname' => '',
                         'email' => '',
-                        'password' => ''
+                        'password' => '',
+                        'role' => ''
                     ];
                 }
             } else {
@@ -94,6 +97,10 @@
     <div class="mb-3">
         <label for="password">Mot de passe</label>
         <input name="password" id="password" cols="30" rows="5" class="form-control form-text" value="<?= $profil['password']; ?>"></>
+    </div>
+    <div class="mb-3">
+        <label for="role">Role</label>
+        <input name="role" id="role" cols="30" rows="5" class="form-control form-text" value="<?= $profil['role']; ?>"></>
     </div>
     <input type="submit" value="Envoyer" name="saveProfil" class="btn btn-outline-primary me-2">
 </form>

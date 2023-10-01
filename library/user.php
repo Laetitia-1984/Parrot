@@ -18,12 +18,12 @@ function getProfilById(PDO $pdo, int $id):array|bool {
     return $query->fetch(PDO::FETCH_ASSOC);
 }
 
-function saveProfil(PDO $pdo, string $name, string $firstname, string $email, string $password, $role = 'user') {
+function saveProfil(PDO $pdo, string $name, string $firstname, string $email, string $password, $role) {
     $sql = "INSERT INTO `users` (`id`, `name`, `firstname`, `email`, `password`, `role`) VALUES (NULL, :name, :firstname, :email, :password, :role)";
     $query = $pdo->prepare($sql); // On prepare la requete et on la stocke dans une variable ($query)
     
     $password = password_hash($password, PASSWORD_DEFAULT);
-    
+
     $query->bindParam(':name', $name, PDO::PARAM_STR);
     $query->bindParam(':firstname', $firstname, PDO::PARAM_STR);
     $query->bindParam(':email', $email, PDO::PARAM_STR);

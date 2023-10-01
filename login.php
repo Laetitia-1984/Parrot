@@ -3,14 +3,19 @@
     require_once('library/user.php');
     require_once('library/session.php');
     require_once('library/pdo.php');
+    
     session_regenerate_id(true);
+    
+    
     $errors = [];
     //Vérification que le formulaire a bien été envoyé
     if (isset($_POST["loginUser"])) {
         $email = $_POST["email"];
         $password = $_POST["password"];
+        
         $user = verifyUserLoginPassword($pdo, $email, $password);
         if ($user) {
+            session_regenerate_id(true);
             $_SESSION['user'] = $user; //Session qui permet de garder en mémoire qui est connecté
             if ($user['role'] === 'user') {
                 header('location: user/index.php'); // Redirection si l'user est un salarié
@@ -22,6 +27,7 @@
         }
     }
     require_once('templates/header.php');
+    
 ?>
 
 <h1>Connexion</h1>
