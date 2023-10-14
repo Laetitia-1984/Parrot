@@ -46,3 +46,11 @@ ALTER TABLE cars
 ADD image2 VARCHAR(255),
     ADD image3 VARCHAR(255),
     ADD image4 VARCHAR(255)
+
+CREATE TABLE `horaires` (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    days VARCHAR(255) NOT NULL,
+    hrsMat VARCHAR(255) NOT NULL,
+    hrsApm VARCHAR(255) NOT NULL,
+    id_users INT REFERENCES users(id)
+);
