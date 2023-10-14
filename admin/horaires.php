@@ -1,34 +1,46 @@
 <?php 
+    require_once('../library/config.php');
+    require_once('../library/session.php');
+    adminOnly();
+
     require_once('templates/header.php');
     require_once('../library/pdo.php');
-    require_once('../library/config.php');
+    require_once('../library/horaires.php');
+
+    $hours = getHours($pdo);
 ?>
 
-<h1>Horaires d'ouverture</h1>
+<h1 class="py-2">Horaires d'ouverture</h1>
 
-<form method="POST" enctype="multipart/form-data" class="form_horaires">
-        <div class="row">
-            <div class="col mb-3">
-                <label for="day" class="form-label list-days">Lundi</label>
-            </div>
-            <div class="col mb-3">
-                <label for="hour_mat" class="form-label label-hours">Matin</label>
-                <select name="hour_mat" id="hour_mat" class="form-select list-hours">
-                    <?php foreach ($hours_mat as $key => $hour_mat) { ?>
-                        <option value="<?=$hour_mat;?>"><?=$hour_mat;?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="col mb-3">
-                <label for="hour_apm" class="form-label label-hours">Apm</label>
-                <select name="hour_apm" id="hour_apm" class="form-select list-hours">
-                    <?php foreach ($hours_apm as $key => $hour_apm) { ?>
-                        <option value="<?=$hour_apm;?>"><?=$hour_apm;?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="col mb-3 my-4">
-                <input type="submit" value="Envoyer" class="btn btn-outline-primary me-2">
-            </div>
-        </div>
-</form>
+<div class="col-md-3 mb-3">
+    <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'ajout_horaires.php';">Ajouter une horaire</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr class="text-hours">
+            <th scope="col">#</th>
+            <th scope="col">Jour</th>
+            <th scope="col">Matin</th>
+            <th scope="col">Après-midi</th>
+            <th scope="col" style="width: 200px;">Action</th>
+        </tr>
+    </thead>
+    <tbody class="table-hours">
+        <?php foreach ($hours as $hour) { ?>
+            <tr>
+                <th scope="row"><?=$hour['id']; ?></th>
+                    <td><?=$hour['days']; ?></td>
+                    <td><?=$hour['hrsMat']; ?></td>
+                    <td><?=$hour['hrsApm']; ?></td>
+                    <td><a href="ajout_horaires.php?id=<?=$hour['id']; ?>">Modifier</a>
+                        |<a href="delete_horaires.php?id=<?=$hour['id']; ?> onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce service ?')">Supprimer</a></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
+<?php 
+    require_once('templates/footer.php');
+?>
+
