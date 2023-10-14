@@ -24,16 +24,24 @@
     
     <div class="row flex-row align-items-center g-5 py-5">
         <div class="col-3 col-sm-8 col-lg-6">
-            <img src="<?=getOccasionImage($occasion['image']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+            <a href="<?=getOccasionImage($occasion['image']);?>" width="200" height="100">
+                <img src="<?=getOccasionImage($occasion['image']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+            </a>
         </div>
         <div class="col-3 col-sm-8 col-lg-6">
-            <img src="<?=getOccasionImage($occasion['image2']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+            <a href="<?=getOccasionImage($occasion['image2']);?>" width="200" height="100">
+                <img src="<?=getOccasionImage($occasion['image2']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+            </a>
         </div>
-        <div class="col-3 col-sm-8 col-lg-6">    
-            <img src="<?=getOccasionImage($occasion['image3']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+        <div class="col-3 col-sm-8 col-lg-6">
+            <a href="<?=getOccasionImage($occasion['image3']);?>" width="200" height="100">
+                <img src="<?=getOccasionImage($occasion['image3']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+            </a>
         </div>
-        <div class="col-3 col-sm-8 col-lg-6">    
-            <img src="<?=getOccasionImage($occasion['image4']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+        <div class="col-3 col-sm-8 col-lg-6">
+            <a href="<?=getOccasionImage($occasion['image4']);?>" width="200" height="100">
+                <img src="<?=getOccasionImage($occasion['image4']);?>" class="d-block mx-lg-auto img-fluid" width="200" height="100" loading="lazy">
+            </a>
         </div>
     </div>
     <div class="row flex-lg-row align-items-center g-5 py-3">
