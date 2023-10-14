@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3307
--- Généré le : sam. 14 oct. 2023 à 19:52
+-- Généré le : sam. 14 oct. 2023 à 19:51
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -24,36 +24,38 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `services`
+-- Structure de la table `horaires`
 --
 
-CREATE TABLE `services` (
+CREATE TABLE `horaires` (
   `id` int(11) NOT NULL,
-  `category` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `price` int(11) NOT NULL,
+  `days` varchar(255) NOT NULL,
+  `hrsMat` varchar(255) NOT NULL,
+  `hrsApm` varchar(255) NOT NULL,
   `id_users` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `services`
+-- Déchargement des données de la table `horaires`
 --
 
-INSERT INTO `services` (`id`, `category`, `title`, `description`, `price`, `id_users`) VALUES
-(1, 'Vidange et révision', 'Vidange Eco', 'Vidange huile moteur / Remplacement filtre à huile', 69, NULL),
-(2, 'Vidange et révision', 'Vidange Pro', 'Vidange huile moteur / Remplacement filtre à huile / Mise à niveau des liquides', 79, NULL),
-(3, 'Entretien et réparation', 'Amortisseurs', 'Changement amortisseurs', 90, NULL),
-(4, 'Vidange et révision', 'Courroie distribution', 'Changement courroie de distribution  / Pompe à eau', 300, NULL);
+INSERT INTO `horaires` (`id`, `days`, `hrsMat`, `hrsApm`, `id_users`) VALUES
+(1, 'Lundi', '8H-12h', '14h-18h', NULL),
+(11, 'Mardi', '8H-12h', '14h-18h', NULL),
+(12, 'Mercredi', '9H-12h', '14h-17h', NULL),
+(13, 'Jeudi', '8H-12h', '14h-18h', NULL),
+(14, 'Vendredi', '8H-12h', '14h-17h', NULL),
+(15, 'Samedi', '9H-12h', 'Fermé', NULL),
+(16, 'Dimanche', 'Fermé', 'Fermé', NULL);
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `services`
+-- Index pour la table `horaires`
 --
-ALTER TABLE `services`
+ALTER TABLE `horaires`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -61,10 +63,10 @@ ALTER TABLE `services`
 --
 
 --
--- AUTO_INCREMENT pour la table `services`
+-- AUTO_INCREMENT pour la table `horaires`
 --
-ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `horaires`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
