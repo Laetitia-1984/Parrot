@@ -1,3 +1,3 @@
-
-<p class="list-days text-center"><?=$hour['days'];?> : </p>
-<p class="list-days me-0 text-center"><?=$hour['hrsMat'];?> / <?=$hour['hrsApm'];?></p>
+<div class="mx-auto">
+    <p class="hours text-center my-0"><?=$hour['days'].' : '.$hour['hrsMat'].' / '.$hour['hrsApm'];?></p>
+</div>
