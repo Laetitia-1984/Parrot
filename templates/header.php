@@ -36,5 +36,4 @@
             <div class="col-md-3 text-end">
                 <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href = 'login.php';">Connexion</button>
             </div>
-
         </header>
