@@ -5,7 +5,7 @@ body {
     font-size: 20px;
 }
 
-header, footer, .btn, .lead, .mark-model-car, legend, .p-occas-detail {
+header, .btn, .lead, .mark-model-car, legend, .p-occas-detail {
     font-size: 30px;
 }
 
@@ -85,4 +85,8 @@ h3, h4, .price, .mark-model-car, .detail-car {
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
+}
+
+.hours {
+    font-size: 15px;
 }
